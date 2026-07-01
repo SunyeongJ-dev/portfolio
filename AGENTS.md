@@ -70,10 +70,8 @@ public/          # static assets (images, icons)
 - Project Case Studies (/projects/[slug])
 - Contact
 
-## My info
+## Documentation
 
-- Name: Sunyeong Jeon
-- Role: Web Developer
-- Email: sun.jeon.dev@gmail.com
-- GitHub: https://github.com/SunyeongJ-dev
-- LinkedIn: https://linkedin.com/in/sunyeong-jeon-74b8b5326
+Before add content, read:
+
+- docs/content.md
