@@ -1,10 +1,10 @@
 import { MainPanel } from "@/components/layout/main-panel";
 
-export default function AboutPage() {
+export default function ContactPage() {
   return (
-    <MainPanel title="About">
+    <MainPanel title="Contact">
       <p className="text-text-primary">
-        About content will go here — bio, background, and skills.
+        Contact links and email will go here.
       </p>
     </MainPanel>
   );
