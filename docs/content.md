@@ -46,3 +46,8 @@ Tools
 - Git
 - GitHub
 - Cursor
+
+### Contact
+
+- Phone: 123-456-7826
+- Location: Vancouver, BC
