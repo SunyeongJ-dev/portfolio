@@ -3,6 +3,7 @@ export type Project = {
   title: string;
   summary: string;
   techStack: string[];
+  imageUrl?: string;
   liveUrl?: string;
   repoUrl?: string;
   caseStudy: {

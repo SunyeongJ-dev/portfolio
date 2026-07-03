@@ -7,7 +7,7 @@ import {
   IconChevronRight,
 } from "@/components/icons/nav-icons";
 import { NavLink } from "@/components/layout/nav-link";
-import { shellNavItems } from "@/components/layout/shell-nav-items";
+import { ProjectsNavGroup } from "@/components/layout/projects-nav-group";
 
 type SidebarProps = {
   collapsed: boolean;
@@ -41,15 +41,14 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
       </div>
 
       <nav id="sidebar-navigation" className="flex flex-1 flex-col gap-1 p-3">
-        {shellNavItems.map((item) => (
-          <NavLink
-            key={item.href}
-            href={item.href}
-            label={item.label}
-            icon={item.icon}
-            collapsed={collapsed}
-          />
-        ))}
+        <NavLink href="/" label="About" icon="about" collapsed={collapsed} />
+        <ProjectsNavGroup collapsed={collapsed} />
+        <NavLink
+          href="/contact"
+          label="Contact"
+          icon="contact"
+          collapsed={collapsed}
+        />
       </nav>
 
       <div className="border-t border-border p-3 lg:hidden">

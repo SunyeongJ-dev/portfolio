@@ -1,7 +1,7 @@
 "use client";
 
-import { shellNavItems } from "@/components/layout/shell-nav-items";
 import { NavLink } from "@/components/layout/nav-link";
+import { ProjectsNavGroup } from "@/components/layout/projects-nav-group";
 
 export function MobileNav() {
   return (
@@ -9,16 +9,10 @@ export function MobileNav() {
       aria-label="Primary"
       className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-bg-main md:hidden"
     >
-      <div className="mx-auto flex max-w-3xl">
-        {shellNavItems.map((item) => (
-          <NavLink
-            key={item.href}
-            href={item.href}
-            label={item.label}
-            icon={item.icon}
-            layout="mobile"
-          />
-        ))}
+      <div className="relative mx-auto flex max-w-3xl">
+        <NavLink href="/" label="About" icon="about" layout="mobile" />
+        <ProjectsNavGroup layout="mobile" />
+        <NavLink href="/contact" label="Contact" icon="contact" layout="mobile" />
       </div>
     </nav>
   );

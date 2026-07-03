@@ -96,6 +96,43 @@ export function IconChevronLeft(props: IconProps) {
   );
 }
 
+export function IconChevronDown(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={iconClassName}
+      {...props}
+    >
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
+
+export function IconFile(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={iconClassName}
+      {...props}
+    >
+      <path d="M14 4h4v16H6V4h5" />
+      <path d="M14 4v4h4" />
+    </svg>
+  );
+}
+
 export type NavIconId = "about" | "projects" | "contact";
 
 const navIcons: Record<NavIconId, (props: IconProps) => ReactElement> = {
