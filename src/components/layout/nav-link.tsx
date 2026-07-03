@@ -12,6 +12,7 @@ type NavLinkProps = {
   icon: NavIconId;
   collapsed?: boolean;
   layout?: "sidebar" | "mobile";
+  exact?: boolean;
 };
 
 export function NavLink({
@@ -20,9 +21,12 @@ export function NavLink({
   icon,
   collapsed = false,
   layout = "sidebar",
+  exact = false,
 }: NavLinkProps) {
   const pathname = usePathname();
-  const isActive = isNavItemActive(pathname, href);
+  const isActive = exact
+    ? pathname === href
+    : isNavItemActive(pathname, href);
 
   const baseClasses =
     layout === "mobile"

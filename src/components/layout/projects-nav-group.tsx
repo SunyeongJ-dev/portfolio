@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 import {
   IconChevronDown,
-  IconChevronRight,
+  IconChevronUp,
   IconFolder,
 } from "@/components/icons/nav-icons";
 import { NavSubLink } from "@/components/layout/nav-sub-link";
@@ -14,13 +14,9 @@ import { projects } from "@/data/projects";
 
 type ProjectsNavGroupProps = {
   collapsed?: boolean;
-  layout?: "sidebar" | "mobile";
 };
 
-export function ProjectsNavGroup({
-  collapsed = false,
-  layout = "sidebar",
-}: ProjectsNavGroupProps) {
+export function ProjectsNavGroup({ collapsed = false }: ProjectsNavGroupProps) {
   const pathname = usePathname();
   const isProjectsPage = pathname === "/projects";
   const isInProjectsSection = pathname.startsWith("/projects");
@@ -31,56 +27,6 @@ export function ProjectsNavGroup({
       setOpen(true);
     }
   }, [isInProjectsSection]);
-
-  if (layout === "mobile") {
-    return (
-      <div className="relative flex flex-1">
-        <Link
-          href="/projects"
-          aria-current={isProjectsPage ? "page" : undefined}
-          className={`flex flex-1 flex-col items-center justify-center gap-0.5 px-1 py-1.5 text-[10px] leading-tight transition-colors ${
-            isProjectsPage
-              ? "text-accent-primary"
-              : "text-text-muted hover:text-text-primary"
-          }`}
-        >
-          <IconFolder
-            className={`h-3.5 w-3.5 ${
-              isProjectsPage ? "text-accent-primary" : "text-accent-soft"
-            }`}
-          />
-          <span>Projects</span>
-        </Link>
-
-        <button
-          type="button"
-          onClick={() => setOpen((current) => !current)}
-          aria-expanded={open}
-          aria-label={open ? "Collapse projects folder" : "Expand projects folder"}
-          className="absolute right-0 top-1/2 -translate-y-1/2 px-1 text-text-muted"
-        >
-          {open ? (
-            <IconChevronDown className="h-3 w-3" />
-          ) : (
-            <IconChevronRight className="h-3 w-3" />
-          )}
-        </button>
-
-        {open ? (
-          <div className="absolute inset-x-0 bottom-full border-t border-border bg-bg-main p-2">
-            {projects.map((project) => (
-              <NavSubLink
-                key={project.slug}
-                href={`/projects/${project.slug}`}
-                label={project.title}
-                layout="mobile"
-              />
-            ))}
-          </div>
-        ) : null}
-      </div>
-    );
-  }
 
   const showLabels = !collapsed;
   const folderActiveClasses = isProjectsPage
@@ -119,14 +65,14 @@ export function ProjectsNavGroup({
           onClick={() => setOpen((current) => !current)}
           aria-expanded={open}
           aria-label={open ? "Collapse projects folder" : "Expand projects folder"}
-          className={`rounded-md p-1 text-text-muted transition-colors hover:bg-bg-deep hover:text-text-primary ${
+          className={`shrink-0 rounded-md p-1 text-text-muted transition-colors hover:bg-bg-deep hover:text-text-primary ${
             collapsed ? "mr-1 lg:mr-2" : "mr-2"
           }`}
         >
           {open ? (
-            <IconChevronDown className="h-3.5 w-3.5" />
+            <IconChevronUp className="h-3.5 w-3.5" />
           ) : (
-            <IconChevronRight className="h-3.5 w-3.5" />
+            <IconChevronDown className="h-3.5 w-3.5" />
           )}
         </button>
       </div>
