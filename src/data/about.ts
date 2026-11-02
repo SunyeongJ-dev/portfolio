@@ -1,6 +1,6 @@
 export const aboutContent = {
-  name: "Sunyeong Jeon",
-  role: "Aspiring Full-Stack Web Developer",
+  name: "Sonya Jeon",
+  role: "Full-Stack Web Developer",
   bio: [
     "I'm an aspiring full-stack web developer who enjoys building web applications that solve everyday problems.",
     "After working in an office environment, I discovered programming and became fascinated by turning ideas into products people can actually use. I primarily build with Next.js, React, and TypeScript.",

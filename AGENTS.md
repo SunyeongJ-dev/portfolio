@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio website built with Next.js. It's the first time using AI agent to build a website. Provide enough explanation and step-by-step instructions to complete it.
+Personal portfolio website built with Next.js. Provide enough explanation and step-by-step instructions to complete it.
 
 ## Goal
 

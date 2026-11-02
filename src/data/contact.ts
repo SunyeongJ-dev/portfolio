@@ -1,8 +1,8 @@
 export const contactContent = {
   name: "Sunyeong Jeon",
   intro:
-    "I'm open to entry-level web developer opportunities and collaborations. Feel free to reach out through any of the channels below.",
-  email: "sun.jeon.dev@gmail.com",
+    "I'm open to web developer opportunities and collaborations. Feel free to reach out through any of the channels below.",
+  email: "sonyaj124.ca@gmail.com",
   github: "https://github.com/SunyeongJ-dev",
   linkedin: "https://linkedin.com/in/sunyeong-jeon-74b8b5326",
   phone: "123-456-7826",
