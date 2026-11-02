@@ -15,6 +15,7 @@ function ProjectPreview({ project }: ProjectPreviewProps) {
         src={project.imageUrl}
         alt={`${project.title} preview`}
         fill
+        loading="eager"
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 768px"
       />
@@ -56,26 +57,28 @@ export function CaseStudyContent({ project }: CaseStudyContentProps) {
         ))}
       </ul>
 
-      <div className="mt-5 space-y-4 border-t border-border pt-5">
-        <div>
-          <h2 className="font-mono text-xs text-accent-soft">Problem</h2>
-          <p className="mt-2 text-sm leading-relaxed text-text-primary">
-            {caseStudy.problem}
-          </p>
+      {caseStudy ? (
+        <div className="mt-5 space-y-4 border-t border-border pt-5">
+          <div>
+            <h2 className="font-mono text-xs text-accent-soft">Problem</h2>
+            <p className="mt-2 text-sm leading-relaxed text-text-primary">
+              {caseStudy.problem}
+            </p>
+          </div>
+          <div>
+            <h2 className="font-mono text-xs text-accent-soft">Solution</h2>
+            <p className="mt-2 text-sm leading-relaxed text-text-primary">
+              {caseStudy.solution}
+            </p>
+          </div>
+          <div>
+            <h2 className="font-mono text-xs text-accent-soft">Outcome</h2>
+            <p className="mt-2 text-sm leading-relaxed text-text-primary">
+              {caseStudy.outcome}
+            </p>
+          </div>
         </div>
-        <div>
-          <h2 className="font-mono text-xs text-accent-soft">Solution</h2>
-          <p className="mt-2 text-sm leading-relaxed text-text-primary">
-            {caseStudy.solution}
-          </p>
-        </div>
-        <div>
-          <h2 className="font-mono text-xs text-accent-soft">Outcome</h2>
-          <p className="mt-2 text-sm leading-relaxed text-text-primary">
-            {caseStudy.outcome}
-          </p>
-        </div>
-      </div>
+      ) : null}
 
       <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-border pt-4 text-sm">
         <Link

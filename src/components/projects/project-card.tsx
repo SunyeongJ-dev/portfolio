@@ -15,6 +15,7 @@ function ProjectCardImage({ project }: ProjectCardProps) {
         src={project.imageUrl}
         alt={`${project.title} preview`}
         fill
+        loading="eager"
         className="object-cover"
         sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
       />
@@ -57,7 +58,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={`/projects/${project.slug}`}
             className="text-accent-primary transition-colors hover:text-accent-soft"
           >
-            Case study →
+            {project.caseStudy ? "Case study" : "Details"} →
           </Link>
           {project.repoUrl ? (
             <a

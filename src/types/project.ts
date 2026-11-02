@@ -6,7 +6,7 @@ export type Project = {
   imageUrl?: string;
   liveUrl?: string;
   repoUrl?: string;
-  caseStudy: {
+  caseStudy?: {
     problem: string;
     solution: string;
     outcome: string;

@@ -36,7 +36,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
             collapsed ? "sr-only lg:not-sr-only" : ""
           }`}
         >
-          Sunyeong Jeon
+          Sonya
         </p>
       </div>
 
